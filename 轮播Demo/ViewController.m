@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "WPCycleScrollView.h"
+
 
 @interface ViewController ()
 
@@ -16,7 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *imageArr = @[@"h1.jpg",
+                          @"h2.jpg",
+                          @"h3.jpg",
+                          @"h4.jpg",
+                          ];;
+
+    WPCycleScrollView *cycleView = [WPCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 180) shouldInfiniteLoop:YES imageNamesGroup:imageArr];
+    
+    [self.view addSubview:cycleView];
+    
+    
 }
 
 
